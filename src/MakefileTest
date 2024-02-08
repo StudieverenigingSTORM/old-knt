@@ -1,0 +1,103 @@
+SRCDIR=src
+DSTDIR=classes
+BINDIR=bin
+CLASSPATH=-cp ../TouchAdministration/classes:../TouchAdministrationTestImpl/classes
+
+all: bindir dstdir classes
+
+bindir:
+	mkdir -p $(BINDIR)
+
+dstdir:
+	mkdir -p $(DSTDIR)
+
+clean:
+	test -d $(BINDIR) && rm -R $(BINDIR) || true
+	test -d $(DSTDIR) && rm -R $(DSTDIR) || true
+
+depend:
+	sh updateclasses.sh MakefileTest
+
+#BEGIN CLASSLIST
+
+classes: $(DSTDIR)/vu/storm/touch/DemoProgram.class $(DSTDIR)/vu/storm/touch/FullscreenProgram.class $(DSTDIR)/vu/storm/touch/GUIPanel.class $(DSTDIR)/vu/storm/touch/gfx/ButtonProvider.class $(DSTDIR)/vu/storm/touch/gfx/GfxUtil.class $(DSTDIR)/vu/storm/touch/gfx/GraphicsConstants.class $(DSTDIR)/vu/storm/touch/gfx/Keypad.class $(DSTDIR)/vu/storm/touch/gfx/KeypadButton.class $(DSTDIR)/vu/storm/touch/gfx/KeypadListener.class $(DSTDIR)/vu/storm/touch/gfx/LongPressButton.class $(DSTDIR)/vu/storm/touch/gfx/Numpad.class $(DSTDIR)/vu/storm/touch/gfx/NumpadButton.class $(DSTDIR)/vu/storm/touch/gfx/NumpadListener.class $(DSTDIR)/vu/storm/touch/gfx/PageButton.class $(DSTDIR)/vu/storm/touch/gfx/StandardStyledButton.class $(DSTDIR)/vu/storm/touch/gfx/TopBar.class $(DSTDIR)/vu/storm/touch/gfx/TouchColumn.class $(DSTDIR)/vu/storm/touch/gfx/TouchRow.class $(DSTDIR)/vu/storm/touch/gfx/WordWrap.class $(DSTDIR)/vu/storm/touch/product/BorrelBar.class $(DSTDIR)/vu/storm/touch/product/LineItemButton.class $(DSTDIR)/vu/storm/touch/product/NewProductColumn.class $(DSTDIR)/vu/storm/touch/product/NumpadOverlay.class $(DSTDIR)/vu/storm/touch/product/OrderPane.class $(DSTDIR)/vu/storm/touch/product/OrderPostponeButton.class $(DSTDIR)/vu/storm/touch/product/OrderStack.class $(DSTDIR)/vu/storm/touch/product/OrderStackButton.class $(DSTDIR)/vu/storm/touch/product/OrderUserButton.class $(DSTDIR)/vu/storm/touch/product/PlaceBorrelOrderButton.class $(DSTDIR)/vu/storm/touch/product/PlaceOrderButton.class $(DSTDIR)/vu/storm/touch/product/ProductButton.class $(DSTDIR)/vu/storm/touch/product/ProductColumn.class $(DSTDIR)/vu/storm/touch/product/ProductScreen.class $(DSTDIR)/vu/storm/touch/product/ResetButton.class $(DSTDIR)/vu/storm/touch/user/UserButton.class $(DSTDIR)/vu/storm/touch/user/UserColumn.class $(DSTDIR)/vu/storm/touch/user/UserScreen.class
+
+$(DSTDIR)/vu/storm/touch/DemoProgram.class: $(SRCDIR)/vu/storm/touch/DemoProgram.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/FullscreenProgram.class: $(SRCDIR)/vu/storm/touch/FullscreenProgram.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/GUIPanel.class: $(SRCDIR)/vu/storm/touch/GUIPanel.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/ButtonProvider.class: $(SRCDIR)/vu/storm/touch/gfx/ButtonProvider.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/GfxUtil.class: $(SRCDIR)/vu/storm/touch/gfx/GfxUtil.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/GraphicsConstants.class: $(SRCDIR)/vu/storm/touch/gfx/GraphicsConstants.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/Keypad.class: $(SRCDIR)/vu/storm/touch/gfx/Keypad.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/KeypadButton.class: $(SRCDIR)/vu/storm/touch/gfx/KeypadButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/KeypadListener.class: $(SRCDIR)/vu/storm/touch/gfx/KeypadListener.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/LongPressButton.class: $(SRCDIR)/vu/storm/touch/gfx/LongPressButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/Numpad.class: $(SRCDIR)/vu/storm/touch/gfx/Numpad.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/NumpadButton.class: $(SRCDIR)/vu/storm/touch/gfx/NumpadButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/NumpadListener.class: $(SRCDIR)/vu/storm/touch/gfx/NumpadListener.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/PageButton.class: $(SRCDIR)/vu/storm/touch/gfx/PageButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/StandardStyledButton.class: $(SRCDIR)/vu/storm/touch/gfx/StandardStyledButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/TopBar.class: $(SRCDIR)/vu/storm/touch/gfx/TopBar.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/TouchColumn.class: $(SRCDIR)/vu/storm/touch/gfx/TouchColumn.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/TouchRow.class: $(SRCDIR)/vu/storm/touch/gfx/TouchRow.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/gfx/WordWrap.class: $(SRCDIR)/vu/storm/touch/gfx/WordWrap.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/BorrelBar.class: $(SRCDIR)/vu/storm/touch/product/BorrelBar.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/LineItemButton.class: $(SRCDIR)/vu/storm/touch/product/LineItemButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/NewProductColumn.class: $(SRCDIR)/vu/storm/touch/product/NewProductColumn.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/NumpadOverlay.class: $(SRCDIR)/vu/storm/touch/product/NumpadOverlay.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/OrderPane.class: $(SRCDIR)/vu/storm/touch/product/OrderPane.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/OrderPostponeButton.class: $(SRCDIR)/vu/storm/touch/product/OrderPostponeButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/OrderStack.class: $(SRCDIR)/vu/storm/touch/product/OrderStack.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/OrderStackButton.class: $(SRCDIR)/vu/storm/touch/product/OrderStackButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/OrderUserButton.class: $(SRCDIR)/vu/storm/touch/product/OrderUserButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/PlaceBorrelOrderButton.class: $(SRCDIR)/vu/storm/touch/product/PlaceBorrelOrderButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/PlaceOrderButton.class: $(SRCDIR)/vu/storm/touch/product/PlaceOrderButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/ProductButton.class: $(SRCDIR)/vu/storm/touch/product/ProductButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/ProductColumn.class: $(SRCDIR)/vu/storm/touch/product/ProductColumn.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/ProductScreen.class: $(SRCDIR)/vu/storm/touch/product/ProductScreen.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/product/ResetButton.class: $(SRCDIR)/vu/storm/touch/product/ResetButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/user/UserButton.class: $(SRCDIR)/vu/storm/touch/user/UserButton.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/user/UserColumn.class: $(SRCDIR)/vu/storm/touch/user/UserColumn.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+$(DSTDIR)/vu/storm/touch/user/UserScreen.class: $(SRCDIR)/vu/storm/touch/user/UserScreen.java
+	javac $(CLASSPATH) -sourcepath $(SRCDIR) -d $(DSTDIR) $<
+
+#END CLASSLIST
+
+jar: clean all
+	jar cvf $(BINDIR)/TouchGUI.jar -C $(DSTDIR) vu

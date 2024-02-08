@@ -1,0 +1,7 @@
+vu.storm.administration.Category
+vu.storm.administration.IDatabase
+vu.storm.administration.LineItem
+vu.storm.administration.Order
+vu.storm.administration.Product
+vu.storm.administration.User
+vu.storm.administration.Image
