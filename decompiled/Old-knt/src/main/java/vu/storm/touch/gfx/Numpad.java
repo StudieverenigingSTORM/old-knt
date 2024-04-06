@@ -8,6 +8,8 @@
 /*     */ import java.awt.event.ComponentListener;
 /*     */ import java.awt.event.KeyEvent;
 /*     */ import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.List;
 /*     */ import javax.swing.JPanel;
 /*     */ 
 /*     */ 
@@ -39,7 +41,7 @@
 /*  39 */       7, 8, 9, 
 /*  40 */       4, 5, 6, 
 /*  41 */       1, 2, 3, 
-/*  42 */       -2 };
+/*  42 */       -2, -3};
 /*     */   
 /*  44 */   private static final int[] BUTTON_SIZES = new int[] { 
 /*  45 */       3, 
@@ -75,16 +77,23 @@
 /*     */   
 /*     */   private static final String TRANSLATED_HARD_KEYS = "0123456789\b\n\n";
 /*     */   
-/*     */   private NumpadButton[] buttons;
+///*     */   private NumpadButton[] buttons;
+            private final List<NumpadButton> buttons = new ArrayList<>();
 /*     */   
 /*     */   public Numpad() {
 /*  81 */     setLayout((LayoutManager)null);
 /*  82 */     this.numpadListener = null;
-/*  83 */     this.buttons = new NumpadButton[12];
+///*  83 */     this.buttons = new NumpadButton[100];
 /*  84 */     for (int i = 0; i < 12; i++) {
-/*     */       
-/*  86 */       this.buttons[i] = new NumpadButton(this, BUTTON_LABELS[i], BUTTON_VALUES[i], BUTTON_SIZES[i]);
-/*  87 */       add(this.buttons[i]);
+/*     */
+                String label = BUTTON_LABELS[i];
+                System.out.println("Size value array: " + BUTTON_VALUES.length + "\ni: " + i);
+                int value = BUTTON_VALUES[i];
+                int size = BUTTON_SIZES[i];
+                NumpadButton button = new NumpadButton(this, label, value, size);
+                this.buttons.add(button);
+///*  86 */       this.buttons[i] = ;
+/*  87 */       add(button);
 /*     */     } 
 /*  89 */     setBackground(new Color(192, 192, 192));
 /*  90 */     addComponentListener(this);
@@ -123,8 +132,10 @@
 /* 123 */     int hcell = getHeight() / 5;
 /* 124 */     for (int i = 0; i < 12; i++) {
 /*     */       
-/* 126 */       this.buttons[i].setButtonSize(BUTTON_SIZES[i]);
-/* 127 */       this.buttons[i].setBounds(BUTTON_X[i] * wcell, BUTTON_Y[i] * hcell, BUTTON_SIZES[i] * wcell, hcell);
+///* 126 */       this.buttons[i].setButtonSize(BUTTON_SIZES[i]);
+///* 127 */       this.buttons[i].setBounds(BUTTON_X[i] * wcell, BUTTON_Y[i] * hcell, BUTTON_SIZES[i] * wcell, hcell);
+                this.buttons.get(i).setButtonSize(BUTTON_SIZES[i]);
+                this.buttons.get(i).setBounds(BUTTON_X[i] * wcell, BUTTON_Y[i] * hcell, BUTTON_SIZES[i] * wcell, hcell);
 /*     */     } 
 /*     */   }
 /*     */ 
